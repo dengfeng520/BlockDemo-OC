@@ -27,7 +27,7 @@ typedef void(^Block)(void);
     
     self.name = @"macho";
     //------------------------------
-//    __weak typeof (self) weakSelf = self;
+    __weak typeof (self) weakSelf = self;
 //    self.block = ^{
 //        __strong typeof (self) strongSelf = weakSelf;
 //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -38,9 +38,37 @@ typedef void(^Block)(void);
 //    };
 //    self.block();
     
+    
+    //================================
+    // ^ 返回值类型  参数列表  表达式
+    NSString *(^blocks)(NSString *) = ^(NSString *testChar){
 
+        NSLog(@"testChar--------------%@",testChar);
+        return testChar;
+    };
+    //================================
+    int(^block)(int) = ^(int testInt){
+        
+        NSLog(@"testInt--------------%d",testInt);
+        return testInt;
+    };
+    //================================
+    ViewController *(^blockview)(NSString *) = ^(NSString *testCharStr){
+        
+        NSLog(@"testCharStr-----------------%@",testCharStr);
+        return weakSelf;
+    };
+    //================================
+    blocks(@"--------------test");
+    block(12);
+    blockview(@"blockview");
+    
+    //================================
+    // 链式编程
     self.selectBlock(@"Test").width(2.0000);
 }
+
+
 
 -(ViewController *)whereLog{
     NSLog(@"-----------------%s",__func__);
@@ -48,7 +76,6 @@ typedef void(^Block)(void);
 }
 
 -(ViewController *(^)(NSString *))selectBlock{
-    
     __weak typeof (self) weakSelf = self;
     ViewController *(^block)(NSString *) = ^(NSString *word){
         
@@ -56,12 +83,10 @@ typedef void(^Block)(void);
 
         return weakSelf;
     };
-    
     return block;
 }
 
 -(ViewController *(^)(float))width{
-    
     __weak typeof (self) weakSelf = self;
     ViewController *(^VCBlock)(float) = ^(float widthData){
       
