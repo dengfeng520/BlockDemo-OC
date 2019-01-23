@@ -17,6 +17,7 @@ typedef void(^Block)(void);
 //
 @property (copy, nonatomic) NSString *name;
 
+
 @end
 
 @implementation ViewController
@@ -62,6 +63,17 @@ typedef void(^Block)(void);
     blocks(@"--------------test");
     block(12);
     blockview(@"blockview");
+    
+    
+    //================================
+    id listArray = [NSMutableArray array];
+    __block int a = 0;
+    void(^listBlock)(void) = ^{
+        [listArray addObject:@"1"];
+        a = 1;
+        NSLog(@"listBlock------------%@,%d",listArray,a);
+    };
+    listBlock();
     
     //================================
     // 链式编程
