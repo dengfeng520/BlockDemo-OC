@@ -13,10 +13,7 @@
 		1C5C1E1C21F2FA6F00D36ED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C5C1E1B21F2FA6F00D36ED4 /* Assets.xcassets */; };
 		1C5C1E1F21F2FA6F00D36ED4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C5C1E1D21F2FA6F00D36ED4 /* LaunchScreen.storyboard */; };
 		1C5C1E2221F2FA6F00D36ED4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5C1E2121F2FA6F00D36ED4 /* main.m */; };
-		1C5C1E4621F3663200D36ED4 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5C1E4521F3663200D36ED4 /* Test.m */; };
-		1C5C1E4921F366B600D36ED4 /* TestSub.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5C1E4821F366B600D36ED4 /* TestSub.m */; };
-		1C5C1E4C21F366F100D36ED4 /* Test+A.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5C1E4B21F366F100D36ED4 /* Test+A.m */; };
-		1C5C1E4F21F3670300D36ED4 /* Test+B.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5C1E4E21F3670300D36ED4 /* Test+B.m */; };
+		9E5C29A3221AB51C00ABB682 /* blockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5C29A2221AB51C00ABB682 /* blockView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,14 +29,8 @@
 		1C5C1E2121F2FA6F00D36ED4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1C5C1E2B21F2FA6F00D36ED4 /* BlockDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockDemoTests.m; sourceTree = "<group>"; };
 		1C5C1E2D21F2FA7000D36ED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C5C1E4421F3663200D36ED4 /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
-		1C5C1E4521F3663200D36ED4 /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
-		1C5C1E4721F366B600D36ED4 /* TestSub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSub.h; sourceTree = "<group>"; };
-		1C5C1E4821F366B600D36ED4 /* TestSub.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSub.m; sourceTree = "<group>"; };
-		1C5C1E4A21F366F100D36ED4 /* Test+A.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Test+A.h"; sourceTree = "<group>"; };
-		1C5C1E4B21F366F100D36ED4 /* Test+A.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Test+A.m"; sourceTree = "<group>"; };
-		1C5C1E4D21F3670300D36ED4 /* Test+B.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Test+B.h"; sourceTree = "<group>"; };
-		1C5C1E4E21F3670300D36ED4 /* Test+B.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Test+B.m"; sourceTree = "<group>"; };
+		9E5C29A1221AB51C00ABB682 /* blockView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blockView.h; sourceTree = "<group>"; };
+		9E5C29A2221AB51C00ABB682 /* blockView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = blockView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,14 +68,8 @@
 				1C5C1E1321F2FA6B00D36ED4 /* AppDelegate.m */,
 				1C5C1E1521F2FA6B00D36ED4 /* ViewController.h */,
 				1C5C1E1621F2FA6B00D36ED4 /* ViewController.m */,
-				1C5C1E4D21F3670300D36ED4 /* Test+B.h */,
-				1C5C1E4E21F3670300D36ED4 /* Test+B.m */,
-				1C5C1E4721F366B600D36ED4 /* TestSub.h */,
-				1C5C1E4821F366B600D36ED4 /* TestSub.m */,
-				1C5C1E4421F3663200D36ED4 /* Test.h */,
-				1C5C1E4521F3663200D36ED4 /* Test.m */,
-				1C5C1E4A21F366F100D36ED4 /* Test+A.h */,
-				1C5C1E4B21F366F100D36ED4 /* Test+A.m */,
+				9E5C29A1221AB51C00ABB682 /* blockView.h */,
+				9E5C29A2221AB51C00ABB682 /* blockView.m */,
 				1C5C1E1821F2FA6B00D36ED4 /* Main.storyboard */,
 				1C5C1E1B21F2FA6F00D36ED4 /* Assets.xcassets */,
 				1C5C1E1D21F2FA6F00D36ED4 /* LaunchScreen.storyboard */,
@@ -173,11 +158,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E5C29A3221AB51C00ABB682 /* blockView.m in Sources */,
 				1C5C1E1721F2FA6B00D36ED4 /* ViewController.m in Sources */,
-				1C5C1E4C21F366F100D36ED4 /* Test+A.m in Sources */,
-				1C5C1E4F21F3670300D36ED4 /* Test+B.m in Sources */,
-				1C5C1E4621F3663200D36ED4 /* Test.m in Sources */,
-				1C5C1E4921F366B600D36ED4 /* TestSub.m in Sources */,
 				1C5C1E2221F2FA6F00D36ED4 /* main.m in Sources */,
 				1C5C1E1421F2FA6B00D36ED4 /* AppDelegate.m in Sources */,
 			);
