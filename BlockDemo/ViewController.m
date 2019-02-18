@@ -33,7 +33,6 @@ typedef void(^Block)(void);
     self.testName = @"macho";
     
     
-    
     //------------------------------
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     //!!!: - 1、Block的本质
@@ -63,7 +62,6 @@ typedef void(^Block)(void);
     // __weak
     __weak typeof (self) weakSelf = self;
     self.testBlock = ^{
-        
         NSLog(@"testtestName11111================%@",weakSelf.testName);
         
         __strong typeof (self) strongSelf = weakSelf;
@@ -82,6 +80,8 @@ typedef void(^Block)(void);
     self.testBlock();
     
     // !!!: - 3、Block原理相关
+    
+    
     // !!!: - 4、Block实际应用
     
     
