@@ -1,6 +1,5 @@
-###1、Block的本质
 
-#####(1)、Block的分类
+###1、Block的分类
  定义一个`Block`,一般的代码如下:
  
  ```
@@ -76,11 +75,56 @@ testView.backgroundColor = [UIColor redColor];
 self.listView = testView;
 [self.view addSubview:testView];
 ```
-
+![demo1](https://github.com/dengfeng520/BlockDemo-OC/blob/master/BlockDemo2.png?raw=true)
 
 **（2）、__weak引起的循环引用**
 
+```
+///
+@property (copy, nonatomic) void(^testBlock)(void);
+///
+@property (strong, nonatomic) NSString *testName;
+
+```
+
+```
+self.testName = @"test Name";
+ self.testBlock = ^{
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            NSLog(@"testtestName22222================%@",self.testName);
+        });
+    };
+    self.testBlock();
+```
+
+`Xcode`报黄点`Capturing 'self' strongly in this block is likely to lead to a retain cycle`;
+
+```
+ // __weak
+    __weak typeof (self) weakSelf = self;
+    self.testBlock = ^{
+        NSLog(@"testtestName11111================%@",weakSelf.testName);
+        __strong typeof (self) strongSelf = weakSelf;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            NSLog(@"testtestName22222================%@",strongSelf.testName);
+        });
+    };
+    self.testBlock();
+```
+
 **（3）、__block引起的循环引用**
+
+```
+ // __block
+    __block FristPageViewController *blockSelf = self;
+    self.testBlock = ^{
+        NSLog(@"blockSelf====================%@",blockSelf.testName);
+    };
+    self.testBlock();
+```
     
 ###3、Block原理相关
 
@@ -168,4 +212,4 @@ self.listView = testView;
 
 运行代码，可以看到在屏幕显示了一个`View`.
 
-![demo](https://github.com/dengfeng520/BlockDemo-OC/blob/master/BlockDemo1.png?raw=true)
+![demo2](https://github.com/dengfeng520/BlockDemo-OC/blob/master/BlockDemo1.png?raw=true)
