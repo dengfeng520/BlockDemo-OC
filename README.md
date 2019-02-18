@@ -53,6 +53,34 @@ test Block===========<__NSStackBlock__: 0x7ffee8ea13c0>
 
 
 ###2、Block循环引用
+
+**（1）、weak引起的循环引用**
+
+```
+///
+@property (weak, nonatomic) UIView *listView;
+```
+```
+_listView = [[UIView alloc]initWithFrame:CGRectMake(0, 70, 100, 100)];
+[self.view addSubview:_listView];
+_listView.backgroundColor = [UIColor redColor];
+```
+`Xcode`已经检查出问题了:
+```Assigning retained object to weak variable; object will be released after assignment```
+
+修改代码：
+
+```
+UIView *testView = [[UIView alloc]initWithFrame:CGRectMake(0, 70, 100, 100)];
+testView.backgroundColor = [UIColor redColor];
+self.listView = testView;
+[self.view addSubview:testView];
+```
+
+
+**（2）、__weak引起的循环引用**
+
+**（3）、__block引起的循环引用**
     
 ###3、Block原理相关
 
